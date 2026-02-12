@@ -3,7 +3,7 @@
 import { TypewriterEffect } from "@/components/ui/typewriter-effect";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FaGithub, FaLinkedin, FaGlobe, FaFileDownload } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 export function Hero() {
@@ -46,10 +46,6 @@ export function Hero() {
               <a href="#work" className="retro-link text-sm sm:text-base">
                 View Featured Work
               </a>
-              <a href="/Abdullah_Al_Noman_CV_2026.pdf" download className="retro-link text-sm sm:text-base inline-flex items-center gap-1">
-                <FaFileDownload />
-                Download CV
-              </a>
             </motion.div>
 
             <motion.div
@@ -61,7 +57,6 @@ export function Hero() {
               {[
                 { href: "https://github.com/AlNomanCSE", icon: <FaGithub className="text-xl sm:text-2xl" />, label: "GitHub" },
                 { href: "https://www.linkedin.com/in/abdullahalnomancse/", icon: <FaLinkedin className="text-xl sm:text-2xl" />, label: "LinkedIn" },
-                { href: "https://alnomancse.netlify.app/", icon: <FaGlobe className="text-xl sm:text-2xl" />, label: "Portfolio" },
                 { href: "https://leetcode.com/u/Abdullah_noman/", icon: <SiLeetcode className="text-xl sm:text-2xl" />, label: "LeetCode" },
               ].map((item) => (
                 <motion.a
