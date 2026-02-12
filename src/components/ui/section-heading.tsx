@@ -11,29 +11,25 @@ interface SectionHeadingProps {
 
 export const SectionHeading = ({ title, subtitle, className = "" }: SectionHeadingProps) => {
   return (
-    <motion.div 
+    <motion.div
       className={`text-center mb-16 ${className}`}
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
     >
-      <div className="relative inline-block">
-        <h2 className="text-4xl md:text-5xl font-bold text-white text-opacity-100 mb-4 relative z-10">
+      <div className="inline-flex flex-col items-center gap-3 retro-panel-soft px-5 py-4">
+        <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[var(--foreground)]">
           {title}
         </h2>
-        <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full"></div>
-        
-        {/* Decorative elements */}
-        <div className="absolute -top-4 -left-4 w-8 h-8 bg-blue-500/20 rounded-full blur-sm"></div>
-        <div className="absolute -bottom-4 -right-4 w-8 h-8 bg-purple-500/20 rounded-full blur-sm"></div>
+        <div className="h-1.5 w-24 bg-[var(--primary)] border-2 border-black rounded-full" />
       </div>
-      
+
       {subtitle && (
-        <p className="text-gray-300 mt-4 max-w-2xl mx-auto">
+        <p className="text-[var(--muted-foreground)] mt-4 max-w-2xl mx-auto font-medium">
           {subtitle}
         </p>
       )}
     </motion.div>
   );
-}; 
+};

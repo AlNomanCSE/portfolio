@@ -1,111 +1,216 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { FaEnvelope, FaLinkedin, FaGithub, FaArrowRight, FaWhatsapp } from "react-icons/fa";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { FaEnvelope, FaLinkedin, FaGithub, FaArrowRight, FaWhatsapp, FaClock } from "react-icons/fa";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const Contact = () => {
+  const [submitState, setSubmitState] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitState("sending");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xqedpkkw", {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (res.ok) {
+        form.reset();
+        setSubmitState("success");
+        return;
+      }
+      setSubmitState("error");
+    } catch {
+      setSubmitState("error");
+    }
+  };
+
   return (
-    <section className="py-24 relative overflow-hidden">
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-transparent to-transparent"></div>
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob shadow-[0_0_50px_rgba(59,130,246,0.3)]"></div>
-          <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000 shadow-[0_0_50px_rgba(168,85,247,0.3)]"></div>
-          <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-pink-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000 shadow-[0_0_50px_rgba(236,72,153,0.3)]"></div>
-        </div>
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <SectionHeading 
-          title="Let&apos;s Connect"
-          subtitle="I&apos;m always excited to discuss new projects, creative ideas, or opportunities to be part of your vision"
+    <section className="retro-section py-16 sm:py-20 px-4">
+      <div className="container mx-auto relative z-10">
+        <SectionHeading
+          title="Let's Connect"
+          subtitle="Share your requirement and I will respond with a clear execution plan"
         />
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto mt-12 bg-gray-900/80 backdrop-blur-sm rounded-xl border border-gray-800/50 p-6 sm:p-8 shadow-xl"
+          className="max-w-5xl mx-auto mt-10 grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
         >
-          <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Get In Touch
-          </h3>
-          
-          <p className="text-gray-300 mb-8">
-            The best way to reach me is directly through email or WhatsApp. I&apos;ll get back to you as soon as possible!
-          </p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-8">
-            <motion.a
-              href="mailto:abdullahalnomancse@gmail.com"
-              className="flex items-center p-3 sm:p-4 bg-gray-800/50 border border-gray-700 rounded-lg hover:bg-gray-800/70 transition-all duration-300 group"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-500/20 flex items-center justify-center mr-3 sm:mr-4 group-hover:bg-blue-500/30 transition-colors">
-                <FaEnvelope className="text-blue-400 text-lg sm:text-xl" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="font-medium text-white text-sm sm:text-base">Email Me</h4>
-                <p className="text-gray-400 text-xs sm:text-sm truncate">abdullahalnomancse@gmail.com</p>
-              </div>
-              <FaArrowRight className="text-blue-400 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all ml-2 sm:ml-3" />
-            </motion.a>
-            
-            <motion.a
-              href="https://wa.me/8801883217001"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center p-3 sm:p-4 bg-gray-800/50 border border-gray-700 rounded-lg hover:bg-gray-800/70 transition-all duration-300 group"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-green-500/20 flex items-center justify-center mr-3 sm:mr-4 group-hover:bg-green-500/30 transition-colors">
-                <FaWhatsapp className="text-green-400 text-lg sm:text-xl" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <h4 className="font-medium text-white text-sm sm:text-base">WhatsApp Me</h4>
-                <p className="text-gray-400 text-xs sm:text-sm truncate">+880 1883-217001</p>
-              </div>
-              <FaArrowRight className="text-green-400 opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all ml-2 sm:ml-3" />
-            </motion.a>
+          <div className="retro-panel p-4 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-black mb-4 text-[var(--foreground)]">Quick Project Form</h3>
+
+            <form onSubmit={handleSubmit} className="space-y-3">
+              <input type="hidden" name="_subject" value="New Portfolio Project Inquiry" />
+              <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
+              <input
+                required
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                className="w-full rounded-md border-2 border-black bg-white px-3 py-2 text-sm sm:text-base font-medium outline-none focus:ring-2 focus:ring-black/20"
+              />
+
+              <input
+                required
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                className="w-full rounded-md border-2 border-black bg-white px-3 py-2 text-sm sm:text-base font-medium outline-none focus:ring-2 focus:ring-black/20"
+              />
+
+              <select
+                name="projectType"
+                defaultValue="Web App"
+                className="w-full rounded-md border-2 border-black bg-white px-3 py-2 text-sm sm:text-base font-medium outline-none focus:ring-2 focus:ring-black/20"
+              >
+                <option>Web App</option>
+                <option>POS / Inventory</option>
+                <option>Backend API</option>
+                <option>Maintenance / Optimization</option>
+              </select>
+
+              <textarea
+                required
+                name="message"
+                rows={5}
+                placeholder="Briefly describe your project, goals, and timeline"
+                className="w-full rounded-md border-2 border-black bg-white px-3 py-2 text-sm sm:text-base font-medium outline-none focus:ring-2 focus:ring-black/20"
+              />
+
+              <button type="submit" className="retro-btn w-full sm:w-auto" disabled={submitState === "sending"}>
+                {submitState === "sending" ? "Sending..." : "Send Project Brief"}
+              </button>
+            </form>
           </div>
-          
-          <div className="border-t border-gray-800 pt-6">
-            <h4 className="text-lg font-medium text-white mb-4">Connect on Social Media</h4>
-            <div className="flex flex-wrap gap-4">
+
+          <div className="retro-panel p-4 sm:p-6">
+            <h3 className="text-xl sm:text-2xl font-black mb-4 text-[var(--foreground)]">Direct Contact</h3>
+
+            <div className="space-y-3">
               <motion.a
-                href="https://linkedin.com/in/abdullahalnomancse"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-lg hover:bg-blue-500/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                href="mailto:abdullahalnomancse@gmail.com"
+                className="retro-panel-soft flex items-center p-3 group"
+                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <FaLinkedin className="text-blue-400 mr-2" />
-                <span className="text-gray-300">LinkedIn</span>
+                <div className="w-10 h-10 rounded-full border-2 border-black bg-[var(--primary)] flex items-center justify-center mr-3">
+                  <FaEnvelope className="text-black" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-bold text-[var(--foreground)] text-sm sm:text-base">Email</h4>
+                  <p className="text-[var(--muted-foreground)] text-xs sm:text-sm truncate">abdullahalnomancse@gmail.com</p>
+                </div>
+                <FaArrowRight className="text-black opacity-0 group-hover:opacity-100 transition-opacity ml-2" />
               </motion.a>
-              
+
               <motion.a
-                href="https://github.com/AlNomanCSE"
+                href="https://wa.me/8801771810475"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-lg hover:bg-blue-500/20 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
+                className="retro-panel-soft flex items-center p-3 group"
+                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <FaGithub className="text-blue-400 mr-2" />
-                <span className="text-gray-300">GitHub</span>
+                <div className="w-10 h-10 rounded-full border-2 border-black bg-[var(--primary)] flex items-center justify-center mr-3">
+                  <FaWhatsapp className="text-black" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-bold text-[var(--foreground)] text-sm sm:text-base">WhatsApp</h4>
+                  <p className="text-[var(--muted-foreground)] text-xs sm:text-sm truncate">+880 1771-810475</p>
+                </div>
+                <FaArrowRight className="text-black opacity-0 group-hover:opacity-100 transition-opacity ml-2" />
               </motion.a>
+            </div>
+
+            <div className="retro-panel-soft p-3 mt-4 flex items-start gap-2">
+              <FaClock className="mt-0.5" />
+              <p className="text-sm font-semibold text-[var(--secondary-foreground)]">
+                Expected reply time: within 12-24 hours on business days.
+              </p>
+            </div>
+
+            <div className="border-t-2 border-black/20 pt-4 mt-4">
+              <h4 className="text-base font-black text-[var(--foreground)] mb-3">Social</h4>
+              <div className="flex flex-wrap gap-3">
+                <motion.a
+                  href="https://linkedin.com/in/abdullahalnomancse"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="retro-btn retro-btn-sm"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaLinkedin className="mr-1" />
+                  <span>LinkedIn</span>
+                </motion.a>
+
+                <motion.a
+                  href="https://github.com/AlNomanCSE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="retro-btn retro-btn-sm"
+                  whileHover={{ y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <FaGithub className="mr-1" />
+                  <span>GitHub</span>
+                </motion.a>
+              </div>
             </div>
           </div>
         </motion.div>
       </div>
+
+      <AnimatePresence>
+        {(submitState === "success" || submitState === "error") && (
+          <motion.div
+            className="fixed inset-0 z-[70] bg-black/45 px-4 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSubmitState("idle")}
+          >
+            <motion.div
+              className="retro-panel bg-[var(--secondary)] w-full max-w-md p-5 sm:p-6"
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 20, scale: 0.98 }}
+              transition={{ duration: 0.2 }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h4 className="text-xl font-black text-[var(--foreground)] mb-2">
+                {submitState === "success" ? "Message Sent" : "Submission Failed"}
+              </h4>
+              <p className="text-sm sm:text-base font-semibold text-[var(--secondary-foreground)] mb-4">
+                {submitState === "success"
+                  ? "Thanks, your project brief was sent successfully. I will reply within 12-24 hours."
+                  : "Could not send the form right now. Please try again or contact me via WhatsApp."}
+              </p>
+
+              <div className="flex justify-end">
+                <button type="button" className="retro-btn retro-btn-sm" onClick={() => setSubmitState("idle")}>
+                  Close
+                </button>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };
 
-export default Contact; 
+export default Contact;
