@@ -115,17 +115,21 @@ export function Header() {
       transition={{ duration: 0.4 }}
     >
       <div className="container mx-auto retro-panel px-4 sm:px-6 h-20 flex items-center justify-between bg-[var(--secondary)]">
-        <Link href="/" className="flex items-center gap-3 min-w-0">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 min-w-0 md:max-w-[260px] lg:max-w-none">
           <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-black shrink-0">
             <Image src="/LogoPic.jpg" alt="Logo" width={44} height={44} className="w-full h-full object-cover" style={{ objectPosition: "top" }} />
           </div>
-          <div className="min-w-0">
-            <p className="text-sm sm:text-base font-black text-[var(--foreground)] truncate">Abdullah Al Noman</p>
-            <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[var(--muted-foreground)]">Software Developer & Product Manager</p>
+          <div className="min-w-0 leading-tight">
+            <p className="text-sm sm:text-base font-black text-[var(--foreground)] truncate md:hidden">Abdullah Al Noman</p>
+            <p className="hidden md:block lg:hidden text-sm font-black text-[var(--foreground)] truncate">A. A. Noman</p>
+            <p className="hidden lg:block text-sm xl:text-base font-black text-[var(--foreground)] truncate">Abdullah Al Noman</p>
+            <p className="hidden xl:block text-[11px] font-bold uppercase tracking-wide text-[var(--muted-foreground)]">
+              Software Developer & Product Manager
+            </p>
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-5">
+        <nav className="hidden md:flex items-center gap-3 lg:gap-5">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.substring(1);
             return (
@@ -133,7 +137,7 @@ export function Header() {
                 key={link.title}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href.substring(1))}
-                className={`text-sm font-extrabold uppercase tracking-wide ${
+                className={`text-[11px] lg:text-sm font-extrabold uppercase tracking-wide ${
                   isActive ? "text-black underline underline-offset-4" : "text-[var(--secondary-foreground)] hover:text-black"
                 }`}
               >
