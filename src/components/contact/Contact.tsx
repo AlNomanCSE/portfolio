@@ -40,7 +40,7 @@ const Contact = () => {
       <div className="container mx-auto relative z-10">
         <SectionHeading
           title="Let's Connect"
-          subtitle="Share your requirement and I will respond with a clear execution plan"
+          subtitle="Open to mid/senior software engineering roles and high-impact backend projects"
         />
 
         <motion.div

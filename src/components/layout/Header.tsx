@@ -124,7 +124,7 @@ export function Header() {
             <p className="hidden md:block lg:hidden text-sm font-black text-[var(--foreground)] truncate">A. A. Noman</p>
             <p className="hidden lg:block text-sm xl:text-base font-black text-[var(--foreground)] truncate">Abdullah Al Noman</p>
             <p className="hidden xl:block text-[11px] font-bold uppercase tracking-wide text-[var(--muted-foreground)]">
-              Software Developer & Product Manager
+              Software Engineer II
             </p>
           </div>
         </Link>

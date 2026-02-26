@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Abdullah Al Noman | Software Developer & Product Manager",
+  title: "Abdullah Al Noman | Software Engineer II",
   description:
-    "Portfolio of Abdullah Al Noman, a software developer and product manager specializing in full-stack engineering, product strategy, and scalable web applications.",
+    "Portfolio of Abdullah Al Noman, a Software Engineer II specializing in scalable backend architecture, Node.js/NestJS systems, and high-concurrency applications.",
 };
 
 export default function RootLayout({

@@ -28,9 +28,8 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-base sm:text-lg text-[var(--muted-foreground)] mt-4 leading-relaxed max-w-xl"
             >
-              I build EdTech and commerce systems for growing businesses and ship production-ready solutions fast.
-              Recently delivered <strong className="text-[var(--foreground)]">Alriyan</strong> in <strong className="text-[var(--foreground)]">90 days</strong> with a 3-person team.
-              Result: <strong className="text-[var(--foreground)]">+21% revenue</strong>, <strong className="text-[var(--foreground)]">~35% time saved</strong>, and <strong className="text-[var(--foreground)]">80% better UX</strong>.
+              Software Engineer II focused on scalable backend systems.
+              I design high-concurrency platforms with <strong className="text-[var(--foreground)]">Node.js/NestJS</strong>, optimize APIs and data pipelines, and lead cross-functional teams to deliver measurable outcomes.
             </motion.p>
 
             <motion.div
@@ -40,12 +39,8 @@ export function Hero() {
               className="flex flex-wrap items-center gap-3 mt-6"
             >
               <motion.a href="#contact" className="retro-btn">
-                Start a Project
+                Hire Me
               </motion.a>
-
-              <a href="#work" className="retro-link text-sm sm:text-base">
-                View Featured Work
-              </a>
             </motion.div>
 
             <motion.div
@@ -81,7 +76,7 @@ export function Hero() {
             <Image src="/profileimage.png" alt="Noman's Profile" width={500} height={500} className="w-full h-full object-cover" priority />
           </div>
           <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full border-2 border-black bg-[var(--secondary)] text-[10px] sm:text-xs font-extrabold text-black whitespace-nowrap shadow-[3px_3px_0_#000]">
-            Software Developer & Product Manager
+            Software Engineer II
           </div>
         </div>
       </div>

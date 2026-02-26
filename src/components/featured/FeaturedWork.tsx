@@ -15,36 +15,36 @@ type FeaturedItem = {
 
 const featured: FeaturedItem[] = [
   {
-    name: "Alriyan Commerce",
-    quick: "POS + Inventory + Warehouse",
-    outcomes: ["+21% Revenue", "80% Better UX", "~35% Time Saved"],
-    stack: ["Next.js", "Django", "QA"],
+    name: "Be-Money-Exchange",
+    quick: "Fintech Exchange Platform",
+    outcomes: ["Transaction Integrity", "Realtime Rates", "Audit Logging"],
+    stack: ["Node.js", "PostgreSQL", "Security Controls"],
     detail:
-      "Delivered a full commerce operations platform in 90 days with a 3-person team. Focused on fast workflows, cleaner UI, and daily operational control.",
+      "Engineered a secure money exchange engine focused on transaction safety, live rate updates, and traceable financial operations.",
   },
   {
-    name: "Innovative Skills Website",
-    quick: "Official EdTech Platform",
-    outcomes: ["Laravel Production", "Structured Workflows", "Stable Delivery"],
-    stack: ["Laravel", "MySQL", "Content Ops"],
+    name: "Blens.ai",
+    quick: "LLM Product Integration",
+    outcomes: ["Streaming Responses", "Context Efficiency", "Scalable UX"],
+    stack: ["Next.js", "LLM Integration", "TypeScript"],
     detail:
-      "Built and maintained the official EdTech web platform with reliable content management and operational support flows.",
+      "Led technical integration of large language models into a Next.js system with streaming responses and efficient context-window handling.",
   },
   {
-    name: "MoneyExchange Ops",
-    quick: "Cross-Border Exchange Ops",
-    outcomes: ["Workflow Visibility", "Role-Based Access", "Faster Reconciliation"],
-    stack: ["Django", "Ops Dashboard", "Auth"],
+    name: "MyREC / E-Recover",
+    quick: "Renewable Energy CRM",
+    outcomes: ["RBAC Access", "Regional Data Control", "Reporting at Scale"],
+    stack: ["CRM", "RBAC", "Data Reporting"],
     detail:
-      "Team-delivered operations platform for exchange workflow tracking, process consistency, and operational monitoring.",
+      "Designed CRM architecture for renewable energy operations with role-based access control and high-volume reporting workflows.",
   },
   {
-    name: "Carbonex CRM + e-RECover",
-    quick: "Solar Insurance Programme Support",
-    outcomes: ["Asset Lifecycle Tracking", "Risk Workflow Support", "Long-Term Monitoring"],
-    stack: ["CRM", "Registration Flows", "Programme Ops"],
+    name: "Innovative Skills LMS Backend",
+    quick: "High-Concurrency EdTech Core",
+    outcomes: ["99.9% Uptime", "Large Concurrent Sessions", "Team Velocity +25%"],
+    stack: ["NestJS", "Redis", "PostgreSQL"],
     detail:
-      "Supported CRM workflows and e-RECover programme operations to improve registration, coverage process clarity, and performance assurance tracking.",
+      "Architected backend services for thousands of concurrent students while standardizing reviews and documentation for faster team delivery.",
   },
 ];
 
@@ -54,7 +54,7 @@ const FeaturedWork = () => {
   return (
     <section id="work" className="retro-section py-16 sm:py-20 px-4">
       <div className="container mx-auto relative z-10">
-        <SectionHeading title="Featured Work" subtitle="Scan fast, tap for details" />
+        <SectionHeading title="Featured Work" subtitle="Projects aligned with senior engineering impact" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
           {featured.map((item, index) => {

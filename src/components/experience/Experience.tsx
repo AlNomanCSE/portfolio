@@ -19,51 +19,49 @@ import {
 
 const experiences = [
   {
-    company: "Innovative Skills BD",
-    position: "Software Developer & Product Manager",
-    period: "December 2025 - Present",
+    company: "Innovative Skills LTD",
+    position: "Software Engineer II",
+    period: "Nov 2025 - Present",
     type: "Dhaka, Bangladesh",
     description:
-      "Driving product strategy and technical execution for EdTech initiatives, bridging business goals with scalable engineering delivery.",
+      "Leading product and backend engineering for high-concurrency EdTech and CRM systems.",
     responsibilities: [
-      "Orchestrated workflows using Microsoft Excel with detailed backlogs, timelines, and resource allocation for on-time module delivery",
-      "Led EdTech feature lifecycle and translated stakeholder requirements into technical specs, improving user retention by 20%",
-      "Developed and maintained the official Innovative Skills EdTech website using Laravel with production-grade content and operational workflows",
-      "Built scalable backend services with Laravel and Node.js to support high-concurrency live classes",
-      "Worked with the team on a cross-border money exchange operations platform with transaction workflow tracking, role-based access, and operational monitoring",
-      "Contributed to a CRM for Carbonex, including the e-RECover Solar Insurance Programme flow for system registration, risk coverage management, and long-term performance support",
-      "Supported HR operations by managing technical recruitment and improving cross-team collaboration protocols",
-      "Conducted technical training sessions for students and internal team members",
+      "Architected a high-concurrency NestJS backend supporting thousands of concurrent learners with 99.9% uptime for live sessions",
+      "Led a cross-functional squad (2 Backend, 1 Frontend, 1 QA) with peer code review standards and engineering documentation",
+      "Managed delivery across 5 high-impact products in EdTech and CRM through milestone-driven planning",
+      "Translated business priorities into execution-ready technical roadmaps and sprint plans",
     ],
-    technologies: ["Laravel", "Node.js", "Django", "CRM", "Excel", "Product Strategy", "Agile", "HR Operations", "Technical Training"],
-    outcomes: ["+20% user retention", "Multi-product delivery ownership", "Improved cross-team execution"],
+    technologies: ["NestJS", "Node.js", "TypeScript", "PostgreSQL", "Redis", "Agile/Scrum", "Technical Planning"],
+    outcomes: ["99.9% uptime", "+25% team velocity", "5 active project portfolio"],
   },
   {
-    company: "European IT Institute",
-    position: "MERN Stack Instructor",
-    period: "September 2025 - November 2025",
+    company: "Innovative Skills LTD",
+    position: "Software Engineer",
+    period: "Feb 2025 - Oct 2025",
     type: "Dhaka, Bangladesh",
     description:
-      "Delivered structured MERN training focused on practical, portfolio-ready development.",
+      "Built modular backend services and improved system performance for production workloads.",
     responsibilities: [
-      "Designed a full 36-class MERN curriculum from JavaScript fundamentals to deployment workflows",
-      "Mentored students to build professional-grade portfolios with clean code and documentation discipline",
+      "Developed Node.js microservices to reduce system coupling and improve maintainability",
+      "Optimized database queries and indexing strategies to improve API performance at scale",
+      "Contributed to backend stability improvements across concurrent user flows",
     ],
-    technologies: ["JavaScript", "React", "Node.js", "Express", "MongoDB", "Curriculum Design", "Mentorship"],
-    outcomes: ["36-class curriculum delivered", "Portfolio-ready student output"],
+    technologies: ["Node.js", "Express", "MongoDB", "PostgreSQL", "API Optimization", "Microservices"],
+    outcomes: ["40% lower API latency", "Lower service coupling", "Faster maintenance cycles"],
   },
   {
     company: "OutNet",
-    position: "Frontend Developer",
-    period: "March 2025 - September 2025",
+    position: "Web Developer",
+    period: "Aug 2024 - Jan 2025",
     type: "Remote / International",
-    description: "Built high-performance frontend modules for international client projects.",
+    description: "Built end-to-end MERN and mobile-ready features for international clients.",
     responsibilities: [
-      "Developed React.js components with robust API integration and maintainable state management",
-      "Reduced frontend bug reports by 30% by enforcing strict TypeScript typing and unit-testing practices",
+      "Built MERN solutions with TypeScript and Redux Toolkit for predictable state and safer APIs",
+      "Engineered React Native features with robust API synchronization and offline data persistence",
+      "Delivered mobile-first workflows with stable cross-device behavior",
     ],
-    technologies: ["React", "TypeScript", "API Integration", "State Management", "Testing"],
-    outcomes: ["30% fewer frontend bugs", "More stable release quality"],
+    technologies: ["React", "TypeScript", "Redux Toolkit", "React Native", "Node.js", "MongoDB"],
+    outcomes: ["Production-ready MERN modules", "Type-safe frontend workflows", "Offline-ready mobile features"],
   },
 ];
 
@@ -100,7 +98,7 @@ const Experience = () => {
   return (
     <section className="retro-section py-16 sm:py-20 px-4">
       <div className="container mx-auto relative z-10">
-        <SectionHeading title="Work Experience" subtitle="My professional journey and contributions" />
+        <SectionHeading title="Work Experience" subtitle="Leadership, architecture, and delivery impact" />
 
         <div className="max-w-5xl mx-auto mt-12 space-y-8">
           {experiences.map((exp, index) => (

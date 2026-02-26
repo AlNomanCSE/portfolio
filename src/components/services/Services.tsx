@@ -6,32 +6,32 @@ import { FaLaptopCode, FaBoxes, FaStore, FaChartLine, FaCheckCircle, FaBolt, FaU
 
 const services = [
   {
-    title: "Full-Stack Build",
-    quick: "Idea -> Launch",
+    title: "Backend Architecture",
+    quick: "System Design -> Production",
     icon: <FaLaptopCode className="text-black" />,
-    forWho: "Startups, founders, new products",
-    outputs: ["Web App", "API", "Deployment"],
+    forWho: "Teams scaling concurrent products",
+    outputs: ["NestJS/Node Services", "Microservice Modules", "Production Readiness"],
   },
   {
-    title: "POS + Inventory",
-    quick: "Store + Warehouse + Billing",
+    title: "API & Data Performance",
+    quick: "Latency + Throughput Optimization",
     icon: <FaStore className="text-black" />,
-    forWho: "Retail, commerce, distribution",
-    outputs: ["POS", "Stock Sync", "Ops Dashboard"],
+    forWho: "Products with growth bottlenecks",
+    outputs: ["Query Tuning", "Caching Strategy", "Monitoring Baseline"],
   },
   {
-    title: "System Optimization",
-    quick: "Improve Existing Software",
+    title: "AI Product Integration",
+    quick: "LLM Features in Real Products",
     icon: <FaBoxes className="text-black" />,
-    forWho: "Running products with slow growth",
-    outputs: ["UX Cleanup", "Bug Reduction", "Speed Boost"],
+    forWho: "Teams shipping AI-enabled workflows",
+    outputs: ["Streaming Responses", "Context Management", "Scalable API Flows"],
   },
   {
-    title: "Product Strategy",
-    quick: "Plan -> Prioritize -> Ship",
+    title: "Technical Leadership",
+    quick: "Roadmap -> Team Execution",
     icon: <FaChartLine className="text-black" />,
-    forWho: "Teams needing clear execution",
-    outputs: ["Roadmap", "Sprint Plan", "Delivery Tracking"],
+    forWho: "Founders and product teams",
+    outputs: ["Roadmap Planning", "Code Review Process", "Delivery Management"],
   },
 ];
 
@@ -39,7 +39,7 @@ const Services = () => {
   return (
     <section id="services" className="retro-section py-16 sm:py-20 px-4">
       <div className="container mx-auto relative z-10">
-        <SectionHeading title="Services" subtitle="What I build and improve for clients" />
+        <SectionHeading title="Services" subtitle="Senior-level engineering support for product teams" />
 
         <div className="retro-panel p-4 sm:p-5 mb-5 sm:mb-6">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
