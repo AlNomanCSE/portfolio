@@ -37,7 +37,7 @@ const experiences = [
   {
     company: "Innovative Skills LTD",
     position: "Software Engineer",
-    period: "Feb 2025 - Oct 2025",
+    period: "Feb 2024 - Oct 2025",
     type: "Dhaka, Bangladesh",
     description:
       "Built modular backend services and improved system performance for production workloads.",
@@ -51,8 +51,8 @@ const experiences = [
   },
   {
     company: "OutNet",
-    position: "Web Developer",
-    period: "Aug 2024 - Jan 2025",
+    position: "Software Engineer",
+    period: "Aug 2023 - Jan 2024",
     type: "Remote / International",
     description: "Built end-to-end MERN and mobile-ready features for international clients.",
     responsibilities: [
