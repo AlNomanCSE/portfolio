@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { getTechIcon } from "@/lib/tech-icons";
 import { FaArrowUp, FaChevronDown, FaClock, FaUsers } from "react-icons/fa";
 
 type FeaturedItem = {
@@ -21,6 +22,30 @@ const featured: FeaturedItem[] = [
     stack: ["Node.js", "PostgreSQL", "Security Controls"],
     detail:
       "Engineered a secure money exchange engine focused on transaction safety, live rate updates, and traceable financial operations.",
+  },
+  {
+    name: "VeriPunch",
+    quick: "Attendance & HR Platform (In Progress)",
+    outcomes: ["Attendance Tracking", "Mobile + Admin Panel", "Evolving into Full HR Suite"],
+    stack: ["Next.js", "React Native", "Expo"],
+    detail:
+      "Currently building VeriPunch, an attendance management product with a mobile app and an admin web panel. It is being designed to grow into a complete HR application.",
+  },
+  {
+    name: "E-commerce Website Revamp",
+    quick: "Sales Growth Project",
+    outcomes: ["Sales +40%", "New Website", "Better Conversion"],
+    stack: ["E-commerce", "Web Performance", "UX"],
+    detail:
+      "Rebuilt an e-commerce website from the ground up, which lifted sales by 40% compared to the previous site.",
+  },
+  {
+    name: "EduCRM",
+    quick: "EdTech Lead Management CRM",
+    outcomes: ["Lead Assignment", "Sales Team Allocation", "Member-wise Tracking"],
+    stack: ["Django", "Next.js", "CRM"],
+    detail:
+      "Built an EdTech CRM that manages leads and assigns them across different sales teams and individual members, so every lead has a clear owner and follow-up trail.",
   },
   {
     name: "Blens.ai",
@@ -110,6 +135,7 @@ const FeaturedWork = () => {
                 <div className="flex flex-wrap gap-2">
                   {item.stack.map((tech) => (
                     <span key={tech} className="retro-chip text-xs bg-[#fffaf0]">
+                      <span className="text-sm">{getTechIcon(tech)}</span>
                       {tech}
                     </span>
                   ))}

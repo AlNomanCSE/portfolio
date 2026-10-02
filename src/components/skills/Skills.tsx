@@ -3,7 +3,8 @@
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { FaCode, FaDatabase, FaMobile, FaTools, FaServer } from "react-icons/fa";
+import { findTechIcon } from "@/lib/tech-icons";
+import { FaAws, FaCode, FaDatabase, FaMobile, FaTools, FaServer } from "react-icons/fa";
 import {
   SiReact,
   SiNextdotjs,
@@ -21,7 +22,6 @@ import {
   SiGithubactions,
   SiScrumalliance,
   SiNginx,
-  SiAmazon,
   SiDigitalocean,
   SiGraphql,
 } from "react-icons/si";
@@ -54,6 +54,8 @@ const skillCategories: SkillCategory[] = [
       { name: "REST APIs", icon: <FaCode className="text-black" />, level: "Advanced" },
       { name: "GraphQL APIs", icon: <SiGraphql className="text-[#E535AB]" />, level: "Working" },
       { name: "Laravel", icon: <SiLaravel className="text-[#FF2D20]" />, level: "Working" },
+      { name: "PHP", icon: <FaCode className="text-black" />, level: "Working" },
+      { name: "FastAPI", icon: <FaCode className="text-black" />, level: "Working" },
     ],
   },
   {
@@ -77,7 +79,7 @@ const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Docker", icon: <SiDocker className="text-[#2496ED]" />, level: "Advanced" },
       { name: "CI/CD Pipelines", icon: <SiGithubactions className="text-[#2088FF]" />, level: "Advanced" },
-      { name: "AWS", icon: <SiAmazon className="text-black" />, level: "Working" },
+      { name: "AWS", icon: <FaAws className="text-[#FF9900]" />, level: "Working" },
       { name: "DigitalOcean", icon: <SiDigitalocean className="text-[#0080FF]" />, level: "Working" },
       { name: "Nginx", icon: <SiNginx className="text-[#009639]" />, level: "Working" },
     ],
@@ -190,7 +192,7 @@ const Skills = () => {
                   className="retro-panel-soft p-4 flex items-center gap-3"
                 >
                   <div className="h-12 w-12 shrink-0 rounded-xl border-2 border-black bg-white flex items-center justify-center text-2xl">
-                    {skill.icon}
+                    {findTechIcon(skill.name) ?? skill.icon}
                   </div>
 
                   <div className="min-w-0">

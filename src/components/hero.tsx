@@ -28,8 +28,10 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="text-base sm:text-lg text-[var(--muted-foreground)] mt-4 leading-relaxed max-w-xl"
             >
-              Software Engineer II focused on scalable backend systems.
-              I design high-concurrency platforms with <strong className="text-[var(--foreground)]">Node.js/NestJS</strong>, optimize APIs and data pipelines, and lead cross-functional teams to deliver measurable outcomes.
+              Software Engineer II building scalable, high-concurrency backends and products people rely on.
+              I work across <strong className="text-[var(--foreground)]">NestJS, Node.js, TypeScript, Laravel, Django and FastAPI</strong>, backed by{" "}
+              <strong className="text-[var(--foreground)]">PostgreSQL and Redis</strong>, with <strong className="text-[var(--foreground)]">Next.js</strong> on the front and{" "}
+              <strong className="text-[var(--foreground)]">Docker and CI/CD</strong> behind every release. From AI and LLM integrations to CRM and EdTech platforms, I optimize APIs, lead cross-functional teams, and ship work with measurable results.
             </motion.p>
 
             <motion.div

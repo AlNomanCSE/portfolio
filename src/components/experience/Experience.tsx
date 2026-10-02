@@ -4,18 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { FaBuilding, FaMapMarkerAlt, FaCode, FaArrowRight } from "react-icons/fa";
-import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiNodedotjs,
-  SiExpress,
-  SiMongodb,
-  SiGraphql,
-  SiJavascript,
-  SiReact as SiReactNative,
-  SiLaravel,
-} from "react-icons/si";
+import { getTechIcon } from "@/lib/tech-icons";
 
 const experiences = [
   {
@@ -31,7 +20,7 @@ const experiences = [
       "Managed delivery across 5 high-impact products in EdTech and CRM through milestone-driven planning",
       "Translated business priorities into execution-ready technical roadmaps and sprint plans",
     ],
-    technologies: ["NestJS", "Node.js", "TypeScript", "PostgreSQL", "Redis", "Agile/Scrum", "Technical Planning"],
+    technologies: ["NestJS", "Node.js", "TypeScript", "PostgreSQL", "Redis", "PHP", "Laravel", "FastAPI", "Agile/Scrum", "Technical Planning"],
     outcomes: ["99.9% uptime", "+25% team velocity", "5 active project portfolio"],
   },
   {
@@ -46,7 +35,7 @@ const experiences = [
       "Optimized database queries and indexing strategies to improve API performance at scale",
       "Contributed to backend stability improvements across concurrent user flows",
     ],
-    technologies: ["Node.js", "Express", "MongoDB", "PostgreSQL", "API Optimization", "Microservices"],
+    technologies: ["Node.js", "Express", "MongoDB", "PostgreSQL", "PHP", "Laravel", "API Optimization", "Microservices"],
     outcomes: ["40% lower API latency", "Lower service coupling", "Faster maintenance cycles"],
   },
   {
@@ -67,33 +56,6 @@ const experiences = [
 
 const Experience = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  const getTechIcon = (techName: string) => {
-    switch (techName.toLowerCase()) {
-      case "react":
-        return <SiReact className="text-[#61DAFB]" />;
-      case "next.js":
-        return <SiNextdotjs className="text-black" />;
-      case "typescript":
-        return <SiTypescript className="text-[#3178C6]" />;
-      case "node.js":
-        return <SiNodedotjs className="text-[#339933]" />;
-      case "express":
-        return <SiExpress className="text-black" />;
-      case "mongodb":
-        return <SiMongodb className="text-[#47A248]" />;
-      case "graphql":
-        return <SiGraphql className="text-[#E535AB]" />;
-      case "javascript":
-        return <SiJavascript className="text-[#F7DF1E]" />;
-      case "react native":
-        return <SiReactNative className="text-[#61DAFB]" />;
-      case "laravel":
-        return <SiLaravel className="text-[#FF2D20]" />;
-      default:
-        return <FaCode className="text-black" />;
-    }
-  };
 
   return (
     <section className="retro-section py-16 sm:py-20 px-4">
