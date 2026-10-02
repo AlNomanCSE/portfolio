@@ -5,7 +5,7 @@ import {
   SiLaravel, SiPhp, SiFastapi, SiPython, SiDjango, SiNestjs, SiRedux, SiExpo, SiPostgresql, SiMysql,
   SiRedis, SiDocker, SiGithubactions, SiDigitalocean, SiNginx, SiScrumalliance,
   SiSpring, SiSpringboot, SiSpringsecurity, SiThymeleaf, SiTypeorm, SiPrisma, SiTailwindcss,
-  SiGit, SiSwagger, SiJsonwebtokens, SiSocketdotio, SiFirebase, SiStripe, SiShopify, SiJira,
+  SiGit, SiSwagger, SiJsonwebtokens, SiSocketdotio, SiFirebase, SiStripe, SiShopify, SiJira, SiCelery, SiWebrtc, SiLinux,
 } from "react-icons/si";
 
 type IconEntry = { match: string[]; icon: React.ReactNode };
@@ -22,6 +22,15 @@ const entries: IconEntry[] = [
   { match: ["php"], icon: <SiPhp className="text-[#777BB4]" /> },
   { match: ["laravel"], icon: <SiLaravel className="text-[#FF2D20]" /> },
   { match: ["fastapi"], icon: <SiFastapi className="text-[#009688]" /> },
+  { match: ["django rest framework"], icon: <SiDjango className="text-[#A30000]" /> },
+  { match: ["docker compose"], icon: <SiDocker className="text-[#2496ED]" /> },
+  { match: ["github actions"], icon: <SiGithubactions className="text-[#2088FF]" /> },
+  { match: ["celery"], icon: <SiCelery className="text-[#37814A]" /> },
+  { match: ["webrtc"], icon: <SiWebrtc className="text-[#333333]" /> },
+  { match: ["websockets"], icon: <SiSocketdotio className="text-black" /> },
+  { match: ["linux & ssh"], icon: <SiLinux className="text-[#FCC624]" /> },
+  { match: ["mysql"], icon: <SiMysql className="text-[#4479A1]" /> },
+  { match: ["tailwind css"], icon: <SiTailwindcss className="text-[#06B6D4]" /> },
   { match: ["python"], icon: <SiPython className="text-[#3776AB]" /> },
   { match: ["django"], icon: <SiDjango className="text-[#092E20]" /> },
   { match: ["java"], icon: <FaJava className="text-[#E76F00]" /> },

@@ -1,0 +1,87 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=0.75in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{parskip}
+
+\definecolor{accent}{HTML}{1a1a1a}
+
+\pagestyle{empty}
+
+\titleformat{\section}{\large\bfseries\color{accent}}{}{0em}{}[\vspace{-0.3em}\titlerule\vspace{0.2em}]
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+
+\newcommand{\resumeItem}[1]{\item[--] #1}
+\newenvironment{resumeList}{\begin{itemize}[leftmargin=1.1em,itemsep=1pt,parsep=0pt,topsep=2pt]}{\end{itemize}}
+
+\newcommand{\resumeEntry}[4]{
+  \noindent\textbf{#1} \hfill #2 \\
+  \textit{#3} \hfill \textit{#4}
+}
+
+\begin{document}
+
+% ---------- Header ----------
+\begin{center}
+    {\LARGE \textbf{Abdullah Al Noman}}\\[2pt]
+    {\large Full-Stack Software Engineer (Python / Django / NestJS / Next.js)}\\[4pt]
+    Dhaka, Bangladesh $\vert$ +8801771810475 $\vert$ \href{mailto:abdullahalnomancse@gmail.com}{abdullahalnomancse@gmail.com}\\
+    \href{https://github.com/AlNomanCSE}{github.com/AlNomanCSE} $\vert$
+    \href{https://abdullahnomancse.netlify.app}{abdullahnomancse.netlify.app}
+\end{center}
+
+% ---------- Summary ----------
+\section*{Professional Summary}
+Full-Stack Software Engineer with 3+ years of production experience building backend systems in Python (Django, Django REST Framework) and full-stack applications with NestJS, Next.js, and TypeScript. Experienced across the full engineering lifecycle: API design, database schema and query optimization, CI/CD pipelines, containerized deployments, and coordinating parallel client projects. Comfortable working directly with international clients in a remote, English-first environment.
+
+% ---------- Experience ----------
+\section*{Professional Experience}
+
+\resumeEntry{Software Engineer II}{Jan 2025 -- Present}{Innovative Skills LTD, Dhaka, Bangladesh}{}
+\begin{resumeList}
+    \resumeItem{Built a large-scale e-commerce platform with an integrated POS system using Django and PostgreSQL, handling real-time inventory, order lifecycle, billing, and automated invoice generation.}
+    \resumeItem{Developed full-stack solutions with NestJS and Next.js for a live-class platform supporting thousands of concurrent users, with real-time classroom interaction over WebSockets.}
+    \resumeItem{Designed modular REST APIs and coordinated API contracts with frontend teams across 5 parallel client projects running simultaneously.}
+    \resumeItem{Set up GitHub Actions CI/CD pipelines with Docker: automated tests on every push, containerized builds, and zero-downtime SSH deploys to a Linux VPS.}
+    \resumeItem{Reduced API response times through database indexing, query optimization, and Redis caching.}
+\end{resumeList}
+
+\vspace{4pt}
+\resumeEntry{Software Engineer}{Oct 2023 -- Dec 2024}{Innovative Skills LTD, Dhaka, Bangladesh}{}
+\begin{resumeList}
+    \resumeItem{Migrated a legacy system to Node.js and TypeScript, reducing backend bugs and making frontend integration more predictable.}
+    \resumeItem{Added end-to-end type safety across frontend and backend, catching entire classes of runtime errors at compile time.}
+    \resumeItem{Collaborated with QA and UI teams to ship features against stable, consistent API contracts.}
+\end{resumeList}
+
+\vspace{4pt}
+\resumeEntry{Web Developer}{Jun 2023 -- Sep 2023}{OutNet, Remote}{}
+\begin{resumeList}
+    \resumeItem{Built MERN stack applications with React Native mobile clients, keeping data synchronized across web and mobile in real time.}
+    \resumeItem{Improved Lighthouse performance scores by 30\% through frontend asset optimization and a reusable component system.}
+    \resumeItem{Managed application state with Redux Toolkit and built RESTful APIs for consistent cross-platform behavior.}
+\end{resumeList}
+
+% ---------- Education ----------
+\section*{Education}
+\resumeEntry{Bachelor of Technology in Computer Science and Engineering}{2018 -- 2022}{National Institute of Technology (NIT), Rourkela, India}{}
+\begin{resumeList}
+    \resumeItem{ICCR Government Scholarship Recipient}
+\end{resumeList}
+
+% ---------- Skills ----------
+\section*{Technical Skills}
+\begin{itemize}[leftmargin=1.1em,itemsep=2pt,parsep=0pt,topsep=2pt]
+    \item \textbf{Languages:} Python, TypeScript, JavaScript, PHP
+    \item \textbf{Backend:} Django, Django REST Framework, NestJS, Node.js, Laravel, REST APIs, WebSockets, SOLID Principles
+    \item \textbf{Frontend:} React.js, Next.js, React Native, Redux Toolkit, Tailwind CSS
+    \item \textbf{Databases:} PostgreSQL, MySQL, MongoDB, Redis
+    \item \textbf{DevOps:} Docker, Docker Compose, GitHub Actions, CI/CD, Linux, SSH
+    \item \textbf{Other:} Git, Celery, WebRTC, Agile/Scrum
+\end{itemize}
+
+\end{document}
