@@ -15,7 +15,7 @@ ital_r = ParagraphStyle("itr", parent=ital, alignment=2)
 bold_r = ParagraphStyle("bdr", parent=bold, alignment=2)
 
 def link(t, u): return f'<link href="{u}" color="#1a1a1a">{t}</link>'
-def section(t): return [Paragraph(t, sec), HRFlowable(width="100%", thickness=0.6, color=colors.black, spaceBefore=1, spaceAfter=4)]
+def section(t): return [Paragraph(t, sec), Spacer(1, 3)]
 def entry(a, b, c, d=""):
     t = Table([[Paragraph(a, bold), Paragraph(b, bold_r)], [Paragraph(c, ital), Paragraph(d, ital_r)]], colWidths=[4.7*inch, 2.3*inch])
     t.setStyle(TableStyle([("LEFTPADDING",(0,0),(-1,-1),0),("RIGHTPADDING",(0,0),(-1,-1),0),("TOPPADDING",(0,0),(-1,-1),0),("BOTTOMPADDING",(0,0),(-1,-1),0)]))
